@@ -1,7 +1,8 @@
 <!DOCTYPE html>
+
 <html>
     <head>
-        <title>KRIS' BOOTCAMP WEBSITE</title>
+        <title>KRIS' BOOTCAMP WEBSITE</title>        
         <style>
             body {
                 background: #E7D5CD;
@@ -64,42 +65,51 @@
             .interests header {
                 font-size: 1.25em;
             }
+            
+            /* portfolio styles */
+            #portfolio {
+                list-style-type: none;
+                padding-left: 0;
+            }
+
+            #portfolio li {
+                background: #fff;
+                padding: 10px;
+                border-radius: 10px;
+                margin-bottom: 10px;
+            }
+
+            #portfolio li:hover {
+                background: #eee;
+            } 
+
+            #portfolio a {
+                text-decoration: none;
+                color: #454545;
+            }
         </style>
+        
     </head>
     
     <body>
         <div id="all-contents">
-            
             <nav>
                 <header>kris' bootcamp website</header>
                 <ul>
-                    <li><a href="index.html">HOME</a></li>
-                    <li><a href="portfolio.html">PORTFOLIO</a></li>
+                    <li><a href="index.html">HOME</a>
+                    </li>
+                    <li><a href="portfolio.html">PORTFOLIO</a>
+                    </li>
                 </ul>
             </nav>
-            
+        
             <main>
-                
-                <div class="sidebar">
-                    <img src="https://www.instagram.com/p/B1vEjQ1FhOz/media/?size=m">
-                </div>
-                
                 <div class="content">
-                    <header>Kris Mason</header>
-                    <p>student at operation spark</p>
-                     <section class="interests">
-                        <header>Interests</header>
-                        <ul>
-                            <li>woodworking</li>
-                            <li>watching the Sopranos</li>
-                            <li>canoing in Louisiana</li>
-                        </ul>
-                    </section>
+                    <h1>Portfolio</h1>
+                    <ul id="portfolio">
+                    </ul>
                 </div>
             </main>
-            
         </div>
-        
-        
     </body>
 </html>
