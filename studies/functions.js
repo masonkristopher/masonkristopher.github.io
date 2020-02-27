@@ -86,7 +86,7 @@
 
   //example of function expression
   //set div1 and div2 as parameters
-  //NOTE: function does not have a name, it is anonymout
+  //NOTE: function does not have a name, it is anonymous
   //the function is "named" through the variable and assignment operator
   var funcExpress = function(div1, div2) {
     return div1 / div2; //returns div1 divided by div2
@@ -96,4 +96,59 @@
   funcExpress(6, 3); //returns 2
 
   console.log(funcExpress(7, 2)); //prints => 3.5
+  
+  
+// scope //
+/*
+* Function statements and their code block are both hoisted to the top of their
+* respective scope. That means that the statements in the function's code block 
+* can be called/invoked at any time within the scope of the function statement.
+*
+* Function expressions will only have their name hoisted to the top of their 
+* scope, not their code block.
+*/
+  
+    //function statement scope example
+    
+    //this is the parent scope here
+    console.log(scopeExample()); //prints => "this can be called anywhere in this scope"
+    
+    
+    function scopeExample() {
+      //this is the local scope here
+      return "this can be called anywhere in this scope";
+    }
+    
+    //function expresson scope example
+    
+    //this is the parent scope
+    console.log(typeof scopeExample2); //prints => undefined
+    //scopeExample2 has been declared as a variable 
+    //however the contents of the function cannot yet be invoked in the code
+    
+    var scopeExample2 = function() {
+      //this is the local scope
+      return "this cannot be called anywhere in this scope, only after line 131";
+    };
+    
+// closures //
+/*
+* Closures are created when functions used variable declared in the parent scope.
+* The code block within a closure can change the variable in the parent or global scope.
+*/
+
+  //closure example
+   
+  var name = "Kris"; //declare variable outside of the function, in the parent scope
+  
+  function fullName(lastName) {
+    name += " " + lastName; //use the same variable in the function
+    return name; //returns the altered variable when the function is invoked
+  }
+  
+  fullName("Mason"); //invoke the fullName function to change the value of <name>
+  
+  console.log(name); //prints => "Kris Mason"
+  //<name> variable was changed both in the function and in the parent scope
+  
   
