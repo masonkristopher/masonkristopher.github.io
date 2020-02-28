@@ -31,12 +31,29 @@ var maleCount = function(array) {
     //filter out the males
     return _.filter(array, function(customerObj) {
         //check to see if my customerObj is male using "gender" key
-        return customerObj === "male";
+        return customerObj.gender === "male";
     }).length //chain on .length to get number of male customers
 
 };
 
-var femaleCount;
+var femaleCount = function(array) {
+
+    //i: an array
+    //o: number
+    //c: use _.reduce
+
+    //get access to each customer object
+    //filter out the males
+    return _.reduce(array, function(i) {
+        //check to see if my customerObj is male using "gender" key
+        if (array[i].gender === "female") {
+            return 1
+        };
+    }, 0)
+
+};
+
+
 
 var oldestCustomer;
 
